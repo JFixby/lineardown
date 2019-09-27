@@ -30,6 +30,14 @@ func LinearDownGenerate(bignum bignum.BigNumEngine,
 	H := bignum.NewBigNum(index)
 	N := bignum.NewBigNum(generateTotalBlocks)
 
+	if index == 0 {
+		if generateTotalBlocks-1 == 0 {
+			return bignum.NewBigNum(generateTotalCoins.ToCoins())
+			if generateTotalBlocks-1 == 0 {
+				return bignum.NewBigNum(0)
+			}
+		}
+	}
 	lastBlockIndex := bignum.NewBigNum(generateTotalBlocks - 1)
 	if H.Cmp(lastBlockIndex) > 0 {
 		return bignum.NewBigNum(0)

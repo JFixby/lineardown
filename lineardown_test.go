@@ -17,6 +17,7 @@ func TestLinearDown(t *testing.T) {
 	N := 44 * 365 * 24 * 60 / 5
 	//checkLinearDown(t, bignum.Float64Engine{}, int64(N), coin.FromFloat(7777777), N/10, false)
 	checkLinearDown(t, bignum.BigDecimalEngine{}, int64(N), coin.FromFloat(7777777), N/10, false)
+	checkLinearDown(t, bignum.BigDecimalEngine{}, int64(N), coin.FromFloat(8000000), N/10, true)
 }
 
 func checkLinearDown(t *testing.T, engine bignum.BigNumEngine, generateTotalBlocks int64, generateTotalCoins coin.Amount, printIterations int, PrintChartData bool) {
@@ -39,12 +40,12 @@ func checkLinearDown(t *testing.T, engine bignum.BigNumEngine, generateTotalBloc
 		)
 		generated = generated.Add(generated, generatedAtBlock_i)
 
-		if int(blockIndex)%printIterations == 0 {
+		if printIterations == 0 || int(blockIndex)%printIterations == 0 {
 			blockIndexPad := fmt.Sprintf("%15v", blockIndex)
 			genPad := fmt.Sprintf("%-30v", generatedAtBlock_i.ToFloat64())
 			totalGenPad := fmt.Sprintf("%-30v", generated.ToFloat64())
 			if PrintChartData {
-				fmt.Println(fmt.Sprintf("%v	%v", i, generatedAtBlock_i.ToFloat64()))
+				fmt.Println(fmt.Sprintf("generate: [%v]=%v", i, generatedAtBlock_i.ToFloat64()))
 			} else {
 				t.Log(fmt.Sprintf("[%v] coins %v total %v", blockIndexPad, genPad, totalGenPad))
 			}
