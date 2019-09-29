@@ -1,0 +1,4 @@
+github.com/jfixby/bignum v0.0.0-20190929091639-c48b486d8882 h1:oj34kEp0Z4Wx3Ln7Q3oM2E6U8bnODQgm1G9cGvrl1Bo=
+github.com/jfixby/bignum v0.0.0-20190929091639-c48b486d8882/go.mod h1:9nlAS/+72lbaSjHL+W3KszyxnaAEZ3fnY+0VDkJS364=
+github.com/jfixby/coin v0.0.0-20190927091650-385b78bc116b h1:FBa1TjOKI5zEjxz7+dABvYlYvKDkaQry4OfRsFF7VjA=
+github.com/jfixby/coin v0.0.0-20190927091650-385b78bc116b/go.mod h1:mFaMuHns/dWGvPLfjg6vjzWxdJLc2X88T1WwqWv91vY=
