@@ -2,6 +2,8 @@
 
 Linear-down coin subsidy generator
 
+[![Build Status](https://img.shields.io/travis/jfixby/lineardown.svg)](https://travis-ci.org/jfixby/lineardown)
+
 ### Example
 
 100 coins generated in 25 steps
