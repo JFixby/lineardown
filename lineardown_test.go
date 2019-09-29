@@ -12,7 +12,7 @@ func TestLinearDown(t *testing.T) {
 	checkLinearDown(t, bignum.Float64Engine{}, int64(3), coin.FromFloat(3), 1, false)
 	checkLinearDown(t, bignum.Float64Engine{}, int64(7), coin.FromFloat(7), 1, false)
 
-	//checkLinearDown(t, bignum.Float64Engine{}, int64(25), coin.FromFloat(100), 1, true)
+	checkLinearDown(t, bignum.Float64Engine{}, int64(25), coin.FromFloat(100), 10, true)
 
 	N := 44 * 365 * 24 * 60 / 5
 	//checkLinearDown(t, bignum.Float64Engine{}, int64(N), coin.FromFloat(7777777), N/10, false)
@@ -60,9 +60,11 @@ func checkLinearDown(t *testing.T, engine bignum.BigNumEngine, generateTotalBloc
 	}
 
 	if expected.ToFloat64() != generated.ToFloat64() {
-		t.Fatalf("mismatched total subsidy -- \n got %v, \nwant %v",
+		t.Fatalf("mismatched total subsidy -- \n got %v, \nwant %v\n"+
+			"engine: %v",
 			generated,
 			expected,
+			engine,
 		)
 	}
 }
